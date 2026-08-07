@@ -3,38 +3,37 @@ title: "Nhật ký công việc"
 date: 2024-01-01
 weight: 1
 chapter: false
-pre: " <b> 1. </b> "
+pre: "<b> 1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
+{{% notice info %}}
+**THÔNG TIN THỰC TẬP SINH**
+* **Họ và tên:** Phạm Nguyễn Viết Vinh
+* **Lớp:** DCT122C5 | **Mã số SV:** 3122411249 
+* **Ngành học:** Công Nghệ Thông Tin
+* **Email:** kimvu1182004@gmail.com | **Điện thoại:** 0914732121
 {{% /notice %}}
 
-**Trong trang này** bạn sẽ cần giới thiệu worklog của bạn **như thế nào**? Bạn hoàn thành chương trình trong vòng **bao nhiêu tuần**? Bạn **đã làm gì** trong các tuần đó?
+{{% notice note %}}
+**THÔNG TIN HƯỚNG DẪN**
+* **Chuyên gia doanh nghiệp:** Nguyễn Gia Hưng (Email: hunggia@amazon.com | SĐT: 0817870645)
+* **Giảng viên hướng dẫn:** Nguyễn Thanh Sang (Email: thanhsang@sgu.edu.vn | SĐT: 0366686557)
+{{% /notice %}}
 
+Dưới đây là chi tiết nhật ký công việc thực tập của tôi trong 8 tuần:
 
-Thông thường và cũng là tiêu chuẩn, một worklog được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung các tuần như sau:
+**Tuần 1:** [Tìm hiểu AWS và các dịch vụ cơ bản](1.1-week1/)
 
-**Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản trong AWS](1.1-week1/)
+**Tuần 2:** [Amazon VPC, VPN và Vẽ kiến trúc hệ thống](1.2-week2/)
 
-**Tuần 2:** [Làm công việc A...](1.2-week2/)
+**Tuần 3:** [Amazon EC2, Docker và AWS Secrets Manager](1.3-week3/)
 
-**Tuần 3:** [Làm công việc B...](1.3-week3/)
+**Tuần 4:** [Tối ưu hóa Dockerfile và đẩy Image lên ECR](1.4-week4/)
 
-**Tuần 4:** [Làm công việc C...](1.4-week4/)
+**Tuần 5:** [Cấu hình ECS, Fargate và kết nối các Microservices](1.5-week5/)
 
-**Tuần 5:** [Làm công việc D...](1.5-week5/)
+**Tuần 6:** [Thiết lập CI/CD với GitHub Actions](1.6-week6/)
 
-**Tuần 6:** [Làm công việc E...](1.6-week6/)
+**Tuần 7:** [Kiểm thử toàn bộ hệ thống dự án AI](1.7-week7/)
 
-**Tuần 7:** [Làm công việc G...](1.7-week7/)
-
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
-
-**Tuần 9:** [Làm công việc I...](1.9-week9/)
-
-**Tuần 10:** [Làm công việc L...](1.10-week10/)
-
-**Tuần 11:** [Làm công việc M...](1.11-week11/)
-
-**Tuần 12:** [Làm công việc N...](1.12-week12/)
+**Tuần 8:** [Hoàn thiện báo cáo và thủ tục kết thúc](1.8-week8/)

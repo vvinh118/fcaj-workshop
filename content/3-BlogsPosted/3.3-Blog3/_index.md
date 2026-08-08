@@ -1,31 +1,30 @@
 ---
 title: "Blog 3"
-date: 2024-01-01
-weight: 1
+date: 2026-08-07
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# AUTO SCALING ON AWS: NOT JUST FOR MASSIVE SYSTEMS
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+What I like most is that Auto Scaling isn't just for massive systems. Even with small applications or learning projects, configuring Auto Scaling gives a clearer understanding of how cloud systems operate in reality.
 
-Key points to know:
+Instead of guessing how many servers are needed, I can simply set boundaries and let AWS adjust automatically based on actual usage. This is one of the clearest differences between deploying applications on the cloud versus traditional servers.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+### Key Considerations When Configuring:
+* Avoid setting CPU thresholds too low, otherwise services will continuously scale up under negligible loads.
+* Set reasonable cooldown periods to prevent rapid oscillation between scaling out and scaling in.
+* If applications consume more memory than CPU, monitor Memory Utilization alongside CPU metrics.
+* Auto Scaling increases task counts, but without an Application Load Balancer, traffic distribution remains ineffective.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+### My Key Takeaways:
+After exploring this feature, I found that Auto Scaling ensures applications consume the right amount of resources at the right time. Costs are minimized during low traffic, and resources scale up automatically during traffic spikes to guarantee performance. This makes deploying applications on AWS far more exciting than traditional deployment methods.
 
-...Image...
+*(Figure: Application deployment architecture on AWS utilizing Amazon ECS Fargate, Application Load Balancer, Amazon S3, Amazon SQS, and DynamoDB for asynchronous processing and data storage).*
 
-...Link...
-
-...Guide...
+**References:**
+* Amazon ECS Service Auto Scaling – AWS Documentation
+* Amazon CloudWatch Metrics for ECS
+* Application Auto Scaling User Guide
+* Amazon ECS Best Practices

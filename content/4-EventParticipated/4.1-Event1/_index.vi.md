@@ -1,125 +1,81 @@
 ---
-title: "Event 1"
-date: 2024-01-01
+title: "Event 1: Cloud Architect"
+date: 2026-08-08
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Bài thu hoạch sự kiện “Cloud Architect”
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+### Thông Tin Chung
+- **Tên sự kiện:** Cuộc thi Cloud Architect
+- **Ngày tổ chức:** 20/06/2026
+- **Địa điểm:** Tầng 26, Tòa nhà Bitexco Financial Tower, số 02 Hải Triều, Thành phố Hồ Chí Minh
+- **Hình thức:** Cuộc thi kiến thức hệ sinh thái AWS và thiết kế kiến trúc hệ thống (Thi đấu theo đội)
+- **Vai trò:** Thí sinh thi đấu – Thành viên đội **"Gặp phải thằng liều"**
 
-### Mục Đích Của Sự Kiện
+### Mục Đích Tham Gia
+Sự kiện không chỉ là một buổi chia sẻ lý thuyết đơn thuần mà là một sàn đấu thực chiến, nơi các đội phải vận dụng tối đa kiến thức về Cloud Computing, dịch vụ AWS và kỹ năng System Design. Việc trực tiếp thi đấu giúp mình củng cố lại toàn bộ kiến thức đã học, rèn luyện tư duy xử lý vấn đề (problem-solving) dưới áp lực thời gian hẹp và tối ưu hóa khả năng làm việc nhóm.
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### Thể Thức & Nội Dung Thi Đấu
 
-### Danh Sách Diễn Giả
+#### 1. Các đội thi & Sơ đồ đối đầu
+Cuộc thi quy tụ 8 đội (mỗi đội gồm 5 thành viên). Mình thuộc biên chế đội số 7 – **Gặp phải thằng liều**.
+Các cặp đấu vòng Tứ kết diễn ra vô cùng căng thẳng:
+- KLKAT vs PrimeOps
+- Team newbie vs Young Flame IT
+- Loser vs Ngũ Đại Hiệp
+- **Gặp phải thằng liều** vs **Lifelong Learners**
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+#### 2. Cấp độ câu hỏi và cơ chế tính điểm
+Bộ đề được phân hóa thành 3 cấp độ, đòi hỏi thí sinh phải kết hợp giữa lý thuyết và phân tích yêu cầu kỹ thuật thực tế:
+- **Cấp độ Practitioner (10 điểm/câu):** Trọng tâm vào các khái niệm Cloud cơ bản, Global Infrastructure, bảo mật IAM, Pricing và AWS Well-Architected Framework.
+- **Cấp độ Associate (20 điểm/câu):** Yêu cầu phân tích sâu hơn về EC2, S3, VPC, RDS, cũng như các bài toán về Load Balancing, Auto Scaling, High Availability và Disaster Recovery.
+- **Cấp độ Professional (50 điểm/câu):** Các bài toán hóc búa nhất về kiến trúc Doanh nghiệp (Enterprise Architecture), Multi-Account, Hybrid Cloud, Chiến lược Migration, Tối ưu chi phí và Bảo mật quy mô lớn.
 
-### Nội Dung Nổi Bật
+#### 3. Các quyền năng chiến thuật
+Cuộc thi trở nên kịch tính hơn khi mỗi đội được cấp 2 quyền năng (chỉ dùng 1 lần/trận), đòi hỏi tư duy quản trị rủi ro:
+- **Rủi ro tối thiểu (Minimal Risk):** Dùng khi gặp câu hỏi khó, phân vân đáp án. Nếu sai không bị trừ điểm, nếu đúng chỉ nhận 50% số điểm.
+- **Ngôi sao hy vọng (Star of Hope):** Dùng cho câu hỏi cực kỳ tự tin. Trả lời đúng nhận điểm nhân đôi, nhưng nếu sai sẽ bị trừ gấp đôi số điểm.
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+### Trải Nghiệm Thi Đấu & Kết Quả
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+Với vai trò là thành viên đội "Gặp phải thằng liều", mình đã trực tiếp tham gia thảo luận chiến thuật và "chốt" đáp án. Quy trình xử lý của đội mình cho mỗi câu hỏi diễn ra rất khẩn trương:
+1. Nhận diện ngay Core Service (Chủ đề AWS trọng tâm).
+2. Phân tích các ràng buộc (Constraints) của bài toán.
+3. Sử dụng phương pháp loại trừ các đáp án phi logic.
+4. Đánh giá rủi ro để quyết định có tung "Kỹ năng đặc biệt" hay không.
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+Khó khăn lớn nhất không nằm ở việc ghi nhớ tên dịch vụ, mà là phải giải thích được **"Vì sao giải pháp A lại tối ưu hơn giải pháp B?"** dựa trên các hệ quy chiếu: Hiệu năng, Bảo mật, Tính sẵn sàng và Chi phí.
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
-
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
-
-#### Domain-Driven Design (DDD)
-
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
-
-#### Event-Driven Architecture
-
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
-
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+**Kết quả chung cuộc:** Dù đội mình đã chiến đấu hết sức nhưng hai đội xuất sắc nhất giành quyền vào Chung kết là **KLKAT** và **Ngũ Đại Hiệp** (dự kiến tranh tài vào ngày 11/07/2026), trong khi **Young Flame IT** về đích ở vị trí thứ Ba. Dù vậy, cả 8 đội đều đã có một trải nghiệm học hỏi tuyệt vời từ chính những phương án giải quyết của đối thủ.
 
 ### Những Gì Học Được
 
-#### Tư Duy Thiết Kế
+#### Kiến thức Chuyên môn (Hard Skills)
+- Nắm vững kiến trúc hạ tầng AWS (Region, Availability Zone).
+- Làm chủ các dịch vụ cốt lõi: Compute (EC2), Storage (S3), Networking (VPC), Database (RDS).
+- Hiểu sâu về thiết kế hệ thống tính sẵn sàng cao (HA), khả năng tự mở rộng (Auto Scaling) và phân phối tải (ELB).
+- Áp dụng các nguyên tắc thiết kế bảo mật chặt chẽ và tối ưu hóa chi phí vận hành.
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+#### Kỹ năng Mềm (Soft Skills)
+- Giao tiếp kỹ thuật (Technical Communication): Trình bày ý tưởng ngắn gọn, rành mạch để thuyết phục đồng đội trong vài giây.
+- Kỹ năng ra quyết định dưới áp lực thời gian (Decision-making under pressure).
+- Đánh giá rủi ro và quản trị chiến lược (Risk Management).
 
-#### Kiến Trúc Kỹ Thuật
+### Ứng Dụng Vào Dự Án Thực Tế (Cloud Finance Platform)
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+Những bài toán hóc búa từ cuộc thi chính là tiền đề tuyệt vời để mình áp dụng trực tiếp vào quá trình thiết kế dự án **Cloud Finance Platform – Personal Finance Management System**:
+- **Thiết kế hạ tầng mạng:** Áp dụng tư duy phân tách rõ ràng các tầng Public, Application và Database trong VPC.
+- **Bảo mật:** Hiểu rõ cách thiết lập Security Group để kiểm soát luồng traffic giữa các microservices, đồng thời áp dụng triệt để nguyên tắc *cấp quyền tối thiểu (Least Privilege)* khi viết IAM Policy.
+- **Lựa chọn dịch vụ:** Tự tin hơn khi đưa ra quyết định sử dụng bộ ba Amazon ECS (Compute), Amazon RDS (Database) và Amazon S3 (Storage tĩnh) sao cho cân bằng nhất giữa hiệu suất và chi phí.
+- **Tính ổn định:** Tích hợp Load Balancing và Auto Scaling để đảm bảo hệ thống tài chính luôn hoạt động xuyên suốt (High Availability).
 
-#### Chiến Lược Hiện Đại Hóa
+### Một Số Hình Ảnh Sự Kiện
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+{{< figure src="Sodothidau.jpg" title="Sơ đồ thi đấu của 8 đội tham gia sự kiện Cloud Architect" >}}
 
-### Ứng Dụng Vào Công Việc
+{{< figure src="thidau.jpg" title="Quá trình thi đấu của đội Gặp phải thằng liều" >}}
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
-
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+{{< figure src="event1.jpg" title="Ảnh chụp chung cuối sự kiện" >}}

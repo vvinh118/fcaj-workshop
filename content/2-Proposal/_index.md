@@ -1,115 +1,80 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: 2026-08-07
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
-
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+# AI-Powered Personal Finance Platform
+## A Cloud-Native Microservices Solution for Intelligent Expense Management on AWS
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+The project develops an intelligent personal finance management platform leveraging Artificial Intelligence (AI/NLP) and Optical Character Recognition (OCR). The system is structured following a Microservices architecture and deployed entirely on AWS cloud infrastructure. By utilizing AWS Serverless and Managed Services, the project delivers an automated solution for expense tracking characterized by high availability, flexible scalability, and absolute security.
 
 ### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+#### What’s the Problem?
+Personal finance management typically demands patience due to manual transaction data entry. Users easily fall into skipping receipts, experiencing fatigue after short-term usage, and lacking a holistic overview of cash flow. Traditional applications lack active data analytics capabilities and fail to understand natural user conversational language.
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+#### The Solution
+Build a web platform integrated with an AI assistant enabling users to input data via natural Vietnamese conversational language (e.g., "Sáng nay ăn phở hết 45k") or upload receipt images for automated data extraction via OCR. The backend is partitioned into independent services (Auth, Finance, AI Agent, Planning, etc.) to handle specialized workloads and deliver real-time alerts and financial insights.
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+#### Benefits and Return on Investment
+* Significantly reduces manual data entry time through automation via OCR (Tesseract) and NLP (Gemini API).
+* Delivers a seamless, intelligent, and highly personalized financial management experience.
+* Microservices architecture on AWS isolates risks, facilitates effortless scaling under surging user traffic, and optimizes operational costs via a pay-as-you-go model.
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+The architecture overview of the system is detailed below:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
-
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+![Cloud Finance Platform Architecture](architecture.png)
 
 ### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+- **Amazon CloudFront & S3**: High-speed static content distribution (SPA Origin) and storage for receipt/export images.
+- **Application Load Balancer (ALB)**: Positioned in public subnets to route internet traffic into internal containers.
+- **Amazon ECS (AWS Fargate)**: Serverless compute environment running 9 microservices (Gateway, Auth, Finance, AI Agent, Notification API, Notification Worker, Planning, Recurring, OCR).
+- **Amazon RDS PostgreSQL**: Relational database management implementing the Database-per-service pattern (isolated logical databases like auth_db, finance_db, ai_db...).
+- **Amazon ElastiCache for Redis**: Acts as a cache and message queue to asynchronously route messages (consumed by the Notification Worker).
+- **AWS Secrets Manager**: Securely manages and injects sensitive configurations (credentials, Gemini API key) into containers.
+- **Amazon CloudWatch & SES**: Centralized log monitoring, metrics tracking, and transactional email/OTP dispatch for users.
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+### Component Design & Data Flow
+- **User Request**: Requests from the frontend traverse Amazon CloudFront (protected by AWS WAF) to the Application Load Balancer.
+- **API Gateway Routing**: ALB routes requests to the Gateway Service on ECS Fargate. Here, the Gateway performs authorization and utilizes AWS Cloud Map (Service Connect) to invoke internal business REST APIs.
+- **Asynchronous Workflow**: Upon triggering events (e.g., dispatching notifications), the Notification API pushes a message into Amazon ElastiCache (Redis). The Notification Worker consumes the queue asynchronously to process via Amazon SES.
+- **External Integrations**: The AI Agent Service communicates directly with the Google Gemini API for advanced NLP and data extraction.
 
 ### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
+**Networking & Security**
+Designed with an isolated VPC containing Public Subnets (for ALB and NAT Gateway) and Private Subnets (for ECS, RDS, and Redis). All computational tasks and data are completely shielded from direct public internet access. Outbound requests to external endpoints (such as Gemini API) strictly traverse the NAT Gateway. AWS Secrets Manager safeguards API keys without embedding static credentials into source code or task definitions.
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+**Containerization & CI/CD Pipeline**
+Backend FastAPI/Python APIs are containerized using Docker and optimized for lightweight image size (v3). Automated CI/CD workflows are established via GitHub Actions, authenticating through OIDC to automatically build and push Docker images to Amazon ECR, followed by seamless ECS Service deployment updates without downtime.
 
 ### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+- **Weeks 1-3 (Cloud Infrastructure)**: Finalized architectural diagrams, configured AWS VPC, Security Groups, initialized Amazon RDS (PostgreSQL) and Amazon ElastiCache (Redis).
+- **Weeks 4-5 (Container & Compute)**: Optimized Dockerfiles for 9 microservices. Built and pushed v3 images to Amazon ECR. Launched the stack on Amazon ECS Fargate and configured ALB.
+- **Week 6 (Edge & CI/CD)**: Deployed the ReactJS frontend to Amazon S3, configured CloudFront and OAC. Successfully established automated CI/CD pipelines via GitHub Actions (OIDC).
+- **Weeks 7-8 (Testing & Workshop)**: Integrated Amazon CloudWatch for log tracking. Conducted internal workshops, ran cloud-based demo testings for AI/OCR features, and completed final reporting.
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
-
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
-
-Total: $0.7/month, $8.40/12 months
-
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+The project is deployed using an optimized architecture tailored for a cost-effective demo environment:
+- **Amazon VPC & Compute**: Utilizes a Single-AZ NAT Gateway and single-task execution (Desired count = 1) per ECS Fargate service to minimize continuous running costs.
+- **Database & Cache**: Amazon RDS PostgreSQL and Amazon ElastiCache (Redis) are configured under demo modes (Single-AZ, Replica = 0).
+- **Cost Monitoring**: Enabled AWS Budgets to trigger automated alerts upon hitting 50%, 80%, and 100% threshold targets of the monthly projected budget.
 
 ### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
+#### Identified Risks
+- Exposure of sensitive configuration secrets (Database Password, JWT Secret, Gemini API Key).
+- External LLM API (Gemini) downtime disrupting natural language input features.
 
 #### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
-
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+- **Configuration Security**: Strictly adhere to storing secrets via AWS Secrets Manager. Prohibit committing physical `.env` files to git repositories.
+- **Fallback AI/OCR**: Implement fallback mechanisms: if Gemini API errors out, the system automatically falls back to regex-based processing or local Tesseract OCR for bill extraction.
+- **Rollback Strategy**: Retain stable previous container image versions (v2) on ECR to swiftly rollback ECS Task Definitions if version v3 encounters deployment anomalies.
 
 ### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
+#### Technical Improvements
+Successfully migrated a localized monolith application to an AWS-standard cloud-native architecture. Outstandingly implemented Event-Driven patterns (Message Queuing via Redis) and Database-per-service principles while fully automating the DevOps pipeline through GitHub Actions.
 #### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+The system is primed to handle heavy workloads while preserving stability. This serves as a robust foundation to evolve into a personalized Fintech ecosystem where AI transcends data entry to actively analyze and forecast user financial health.

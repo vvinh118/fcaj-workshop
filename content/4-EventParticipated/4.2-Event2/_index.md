@@ -1,126 +1,69 @@
 ---
-title: "Event 2"
-date: 2024-01-01
-weight: 1
+title: "Event 2: Cloud Architect x Meet Up"
+date: 2026-08-08
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+# Report on the “Cloud Architect x Meet Up” Event
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+### General Information
+- **Event Name:** Cloud Architect x Meet Up
+- **Date:** 11/07/2026
+- **Location:** 26th Floor, Bitexco Financial Tower, Ho Chi Minh City
+- **Content:** The Cloud Architect competition finals and in-depth technical sharing sessions (Tech Meetup) from industry experts.
 
-### Event Objectives
+---
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+### Part 1: "Cloud Architect" Competition Finals
 
-### Speakers
+After dramatic qualifying rounds, the event kicked off with a fiery final match between the two most outstanding teams: **KLKAT** and **Ngũ Đại Hiệp**. 
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+#### Finals Exam Structure
+Retaining the core 10-question format, the organizers tweaked the difficulty to test the contestants' limits. The question bank's structure was redistributed with a heavy focus on high-level architectural problems:
+- **Largest proportion - Professional Level (50 points/question):** Required teams to solve complex problems regarding Enterprise Architecture, Migration strategies, Multi-Account setups, and large-scale system optimization.
+- **Medium proportion - Associate Level (20 points/question):** Deep analysis of HA (High Availability) architectures, Auto Scaling, ELB, and the combination of core services (EC2, S3, VPC, RDS).
+- **Smallest proportion - Practitioner Level (10 points/question):** Accounted for a very small fraction, revolving around basic concepts and Pricing calculations.
 
-### Key Highlights
+#### Final Results
+With reasonable tactics and a solid knowledge foundation in solving tough system design problems, the Champion was officially named:
+- 🏆 **Champion (Top 1):** Team **KLKAT**
+- 🥈 **Runner-up (Top 2):** Team **Ngũ Đại Hiệp**
+- 🥉 **Third Place (Top 3):** Team **Young Flame IT** *(Secured the top 3 spot due to a higher score among the two teams eliminated in the Semifinals)*.
 
-#### Identifying the drawbacks of legacy application architecture
+---
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+### Part 2: In-depth Sharing Sessions (Tech Meetup)
 
-#### Transitioning to modern application architecture – Microservices
+The heat of the event was maintained with two highly practical technical sharing sessions (Speak Sessions) from industry experts.
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+#### Session 1: Securing Your Web Apps With AWS Security Agent
+- **Speaker:** Mr. Thinh Nguyen (DevOps/DevSecOps/Cloud Engineer)
+- **Key Highlights:** 
+  The presentation focused on deeply integrating security into the development process (DevSecOps) through AI agents (Security Agents). Mr. Thinh introduced how the system automates vulnerability scanning, protects web applications, and responds to threats in the Cloud environment.
+- **Key Takeaways:** 
+  Applying Agentic AI to security opens up a completely new perspective on autonomous system architecture. Instead of manual configuration, AI agents can proactively analyze the context and propose defense strategies. This is extremely useful when designing applications that require high data security, such as a personal finance management platform.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+#### Session 2: SLA and Monitoring - From SLA to Monitoring what really matters
+- **Speaker:** Mr. Nguyen Huynh Son
+- **Key Highlights:** 
+  Mr. Son redefined the importance of SLA (Service Level Agreement) not just as a written commitment, but as a guiding principle for the entire system operation process. The four main pillars emphasized include: *Clear Expectations, Service Accountability, Risk Management, and Performance Measurement.*
+- **Key Takeaways:** 
+  SLA and Monitoring metrics are the core foundation for evaluating software quality. These criteria directly support the construction of Test Plans and Test Case designs. A good system must not only pass functional tests but also meet strict barriers regarding response time and load-bearing capacity, especially in complex architectures like an autonomous drone delivery system.
 
-#### Domain-Driven Design (DDD)
+---
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+### Event Gallery
 
-#### Event-Driven Architecture
+{{< figure src="chungket.jpg" title="The Cloud Architect final match between KLKAT and Ngũ Đại Hiệp" >}}
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+{{< figure src="vodich.jpg" title="Team KLKAT excellently winning the Championship" >}}
 
-#### Compute Evolution
+{{< figure src="event2.5.jpg" title="Mr. Thinh Nguyen presenting the topic Securing Your Web Apps With AWS Security Agent" >}}
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+{{< figure src="event2.1.jpeg" title="Introduction to Frontier Agent and DevSecOps automation" >}}
 
-#### Amazon Q Developer
+{{< figure src="event2.4.jpg" title="Mr. Nguyen Huynh Son sharing the important components of SLAs" >}}
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
-
-### Key Takeaways
-
-#### Design Mindset
-
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
-
-#### Technical Architecture
-
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
-
-#### Modernization Strategy
-
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
-
-### Applying to Work
-
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
-
-### Event Experience
-
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
-
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
-
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
-
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+{{< figure src="event2.3.jpeg" title="Commemorative group photo successfully wrapping up the Cloud Architect x Meet Up event" >}}

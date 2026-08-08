@@ -14,11 +14,11 @@ pre: " <b> 1.3. </b> "
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | --- | --- | --- | --- |
-| 2 | - Làm tiếp bài lab về Amazon Elastic Compute Cloud (EC2) | 06/07/2026 | 06/07/2026 | |
-| 3 | - Tìm hiểu khái niệm Containerization và nền tảng Docker để chuẩn bị cho việc đóng gói ứng dụng | 07/07/2026 | 07/07/2026 | |
-| 4 | - Nghiên cứu dịch vụ lưu trữ image Amazon Elastic Container Registry (ECR) | 08/07/2026 | 08/07/2026 | |
-| 5 | - Làm quen với AWS Secrets Manager để biết cách bảo mật các thông tin nhạy cảm thay vì dùng file .env | 09/07/2026 | 09/07/2026 | |
-| 7 | - Tham gia event Cloud Architect x Meet Up 11/07 | 11/07/2026 | 11/07/2026 | |
+| 2 | - Làm tiếp bài lab về Amazon Elastic Compute Cloud (EC2) | 06/07/2026 | 06/07/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Tìm hiểu khái niệm Containerization và nền tảng Docker để chuẩn bị cho việc đóng gói ứng dụng | 07/07/2026 | 07/07/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Nghiên cứu dịch vụ lưu trữ image Amazon Elastic Container Registry (ECR) | 08/07/2026 | 08/07/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Làm quen với AWS Secrets Manager để biết cách bảo mật các thông tin nhạy cảm thay vì dùng file .env | 09/07/2026 | 09/07/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 7 | - Tham gia event Cloud Architect x Meet Up 11/07 | 11/07/2026 | 11/07/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Kết quả đạt được tuần 3:
 * Hoàn thành các bài thực hành chuyên sâu về dịch vụ EC2.

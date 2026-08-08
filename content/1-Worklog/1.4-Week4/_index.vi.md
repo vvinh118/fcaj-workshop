@@ -16,7 +16,7 @@ pre: " <b> 1.4. </b> "
 | 2 | - **Đồ án:** Bắt đầu triển khai dự án web quản lý tài chính tích hợp AI lên AWS <br> - Review lại source code backend | 13/07/2026 | 13/07/2026 | |
 | 3 | - Tiến hành dọn dẹp và tối ưu hóa 9 file Dockerfile cho các microservices (Gateway, Auth, Finance, AI, OCR...) để giảm bớt dung lượng thừa (như gỡ bỏ Dify/Tesseract ở các service không cần thiết) | 14/07/2026 | 14/07/2026 | |
 | 4 | - Test build thử các image ở dưới máy local nghiệm thu trước | 15/07/2026 | 15/07/2026 | |
-| 5 | - Thực hành push đủ 9 image v3 lên kho lưu trữ ECR | 16/07/2026 | 16/07/2026 | |
+| 5 | - Thực hành push đủ 9 image v3 lên kho lưu trữ ECR | 16/07/2026 | 16/07/2026 | https://cloudjourney.awsstudygroup.com/ |
 | 6 | - Cập nhật nội dung worklog tuần | 17/07/2026 | 17/07/2026 | |
 
 ### Kết quả đạt được tuần 4:

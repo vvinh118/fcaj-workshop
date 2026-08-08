@@ -15,7 +15,7 @@ pre: " <b> 1.7. </b> "
 | --- | --- | --- | --- | --- |
 | 2 | - Hoàn thiện các khâu chuẩn bị cuối cùng cho workshop web | 03/08/2026 | 03/08/2026 | |
 | 3 | - Chạy thử nghiệm (demo) nội dung cho workshop web | 04/08/2026 | 04/08/2026 | |
-| 4 | - **Đồ án:** Kiểm thử toàn bộ hệ thống lần cuối. Đảm bảo các luồng đăng nhập, tạo giao dịch tự động hoạt động ổn định trên cloud | 05/08/2026 | 05/08/2026 | |
+| 4 | - **Đồ án:** Kiểm thử toàn bộ hệ thống lần cuối. Đảm bảo các luồng đăng nhập, tạo giao dịch tự động hoạt động ổn định trên cloud | 05/08/2026 | 05/08/2026 | https://cloudjourney.awsstudygroup.com/ |
 | 5 | - **Đồ án:** Kiểm thử tính năng gọi AI chatbot và tính năng quét hóa đơn OCR trên AWS | 06/08/2026 | 06/08/2026 | |
 | 6 | - Bắt đầu viết báo cáo thực tập | 07/08/2026 | 07/08/2026 | |
 

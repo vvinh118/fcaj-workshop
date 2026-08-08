@@ -14,11 +14,11 @@ pre: " <b> 1.2. </b> "
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | --- | --- | --- | --- |
-| 2 | - Nghiên cứu tài liệu và tự học theo video giảng dạy trên youtube AWS Study Group | 29/06/2026 | 29/06/2026 | |
-| 3 | - Học video cách vẽ kiến trúc AWS trên draw.io <br> - Thực hành xây dựng các sơ đồ kiến trúc AWS cơ bản bằng draw.io | 30/06/2026 | 30/06/2026 | |
-| 4 | - Tìm hiểu và thực hành bài lab: Amazon Virtual Private Cloud (VPC) và AWS Site-to-Site VPN: <br>&emsp; + Giới thiệu Amazon VPC <br>&emsp; + Network Security với Security Groups và Network ACLs | 01/07/2026 | 01/07/2026 | |
-| 5 | - Tiếp tục thực hành bài lab: <br>&emsp; + Triển khai Amazon EC2 Instance <br>&emsp; + Thiết lập AWS Site-to-Site VPN | 02/07/2026 | 02/07/2026 | |
-| 6 | - Hoàn tất bài lab VPC & VPN: <br>&emsp; + Dọn dẹp Tài nguyên <br>&emsp; + Infrastructure as Code Templates | 03/07/2026 | 03/07/2026 | |
+| 2 | - Nghiên cứu tài liệu và tự học theo video giảng dạy trên youtube AWS Study Group | 29/06/2026 | 29/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - Học video cách vẽ kiến trúc AWS trên draw.io <br> - Thực hành xây dựng các sơ đồ kiến trúc AWS cơ bản bằng draw.io | 30/06/2026 | 30/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Tìm hiểu và thực hành bài lab: Amazon Virtual Private Cloud (VPC) và AWS Site-to-Site VPN: <br>&emsp; + Giới thiệu Amazon VPC <br>&emsp; + Network Security với Security Groups và Network ACLs | 01/07/2026 | 01/07/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Tiếp tục thực hành bài lab: <br>&emsp; + Triển khai Amazon EC2 Instance <br>&emsp; + Thiết lập AWS Site-to-Site VPN | 02/07/2026 | 02/07/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 6 | - Hoàn tất bài lab VPC & VPN: <br>&emsp; + Dọn dẹp Tài nguyên <br>&emsp; + Infrastructure as Code Templates | 03/07/2026 | 03/07/2026 | https://cloudjourney.awsstudygroup.com/ |
 
 ### Kết quả đạt được tuần 2:
 * Biết cách sử dụng draw.io để thiết kế các sơ đồ kiến trúc AWS cơ bản.

@@ -13,10 +13,10 @@ pre: " <b> 1.5. </b> "
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | --- | --- | --- | --- |
-| 2 | - Tìm hiểu dịch vụ quản lý container Amazon ECS và mô hình serverless AWS Fargate để chạy ứng dụng | 20/07/2026 | 20/07/2026 | |
-| 3 | - **Đồ án:** Tạo các Task Definitions cho hệ thống, khai báo nạp biến môi trường an toàn từ Secrets Manager | 21/07/2026 | 21/07/2026 | |
-| 4 | - Tạo và cấu hình ECS Services, bật Service Connect để các microservices gọi được nhau | 22/07/2026 | 22/07/2026 | |
-| 5 | - Phối hợp với bạn cùng nhóm để gắn ALB Target Group vào Gateway Service, đảm bảo luồng mạng đi thông suốt | 23/07/2026 | 23/07/2026 | |
+| 2 | - Tìm hiểu dịch vụ quản lý container Amazon ECS và mô hình serverless AWS Fargate để chạy ứng dụng | 20/07/2026 | 20/07/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 3 | - **Đồ án:** Tạo các Task Definitions cho hệ thống, khai báo nạp biến môi trường an toàn từ Secrets Manager | 21/07/2026 | 21/07/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Tạo và cấu hình ECS Services, bật Service Connect để các microservices gọi được nhau | 22/07/2026 | 22/07/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Phối hợp với bạn cùng nhóm để gắn ALB Target Group vào Gateway Service, đảm bảo luồng mạng đi thông suốt | 23/07/2026 | 23/07/2026 | https://cloudjourney.awsstudygroup.com/ |
 | 6 | - Viết worklog nộp báo cáo tuần | 24/07/2026 | 24/07/2026 | |
 
 ### Kết quả đạt được tuần 5:

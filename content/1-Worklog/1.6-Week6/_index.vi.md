@@ -15,8 +15,8 @@ pre: " <b> 1.6. </b> "
 | --- | --- | --- | --- | --- |
 | 2 | - Bắt đầu chuẩn bị tài liệu làm workshop | 27/07/2026 | 27/07/2026 | |
 | 3 | - **Đồ án:** Thiết lập GitHub Actions sử dụng OIDC để cấu hình luồng CI/CD | 28/07/2026 | 28/07/2026 | |
-| 4 | - Hoàn thiện luồng CI/CD tự động build image và update ECS Service mỗi khi có code mới | 29/07/2026 | 29/07/2026 | |
-| 5 | - Theo dõi và check log hệ thống trên Amazon CloudWatch để gỡ lỗi | 30/07/2026 | 30/07/2026 | |
+| 4 | - Hoàn thiện luồng CI/CD tự động build image và update ECS Service mỗi khi có code mới | 29/07/2026 | 29/07/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Theo dõi và check log hệ thống trên Amazon CloudWatch để gỡ lỗi | 30/07/2026 | 30/07/2026 | https://cloudjourney.awsstudygroup.com/ |
 | 6 | - Dành thời gian ghi nhận tiến độ vào worklog | 31/07/2026 | 31/07/2026 | |
 
 ### Kết quả đạt được tuần 6:

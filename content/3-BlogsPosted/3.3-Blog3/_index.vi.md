@@ -1,31 +1,30 @@
 ---
 title: "Blog 3"
-date: 2024-01-01
-weight: 1
+date: 2026-08-07
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# AUTO SCALING TRONG AWS: KHÔNG CHỈ DÀNH CHO HỆ THỐNG CỰC LỚN
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Điều mình thích nhất là Auto Scaling không chỉ dành cho những hệ thống cực lớn. Ngay cả với những ứng dụng nhỏ hoặc dự án học tập, việc cấu hình Auto Scaling cũng giúp mình hiểu rõ hơn cách một hệ thống cloud vận hành trong thực tế.
 
-Các điểm chính cần nắm:
+Thay vì đoán trước sẽ cần bao nhiêu server, mình chỉ cần đặt ra giới hạn và để AWS tự điều chỉnh theo tình hình sử dụng. Đây cũng là một trong những điểm mình thấy khác biệt rõ rệt giữa việc triển khai ứng dụng trên cloud và chạy trên máy chủ truyền thống.
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+### Một vài lưu ý khi cấu hình:
+* Không nên đặt ngưỡng CPU quá thấp, nếu không service sẽ scale liên tục dù tải chưa đáng kể.
+* Nên đặt khoảng thời gian cooldown hợp lý để tránh việc vừa scale out xong lại scale in ngay sau đó.
+* Nếu ứng dụng sử dụng nhiều RAM hơn CPU thì nên theo dõi Memory Utilization thay vì chỉ nhìn vào CPU.
+* Auto Scaling giúp tăng số lượng task, nhưng nếu không có Application Load Balancer thì việc phân phối lưu lượng sẽ không hiệu quả.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+### Điều mình rút ra:
+Sau khi tìm hiểu tính năng này, mình thấy Auto Scaling giúp ứng dụng sử dụng đúng lượng tài nguyên tại đúng thời điểm. Khi ít người dùng thì tiết kiệm chi phí, khi lượng truy cập tăng thì tự mở rộng để đảm bảo hiệu năng. Đó là lý do khiến việc triển khai ứng dụng trên AWS thú vị hơn rất nhiều so với cách truyền thống.
 
-...Hình ảnh...
+*(Hình: Kiến trúc triển khai ứng dụng trên AWS sử dụng Amazon ECS Fargate, Application Load Balancer, Amazon S3, Amazon SQS và DynamoDB để xử lý bất đồng bộ và lưu trữ dữ liệu).*
 
-...Link...
-
-...Hướng dẫn...
+**Tài liệu tham khảo:**
+* Amazon ECS Service Auto Scaling – AWS Documentation
+* Amazon CloudWatch Metrics for ECS
+* Application Auto Scaling User Guide
+* Amazon ECS Best Practices

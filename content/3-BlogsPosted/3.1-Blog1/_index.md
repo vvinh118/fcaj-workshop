@@ -1,31 +1,28 @@
 ---
 title: "Blog 1"
-date: 2024-01-01
+date: 2026-08-07
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# 7 IAM BEST PRACTICES TO BETTER PROTECT YOUR AWS ACCOUNT
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+When starting with AWS, many often focus on provisioning EC2 instances, storing data on S3, or deploying databases with Amazon RDS. However, before worrying about how fast a system runs, we must answer a more critical question: **Who is allowed to access resources, and what actions are they permitted to perform?**
 
-Key points to know:
+This is the core role of **AWS Identity and Access Management (IAM)**. Here are 7 essential principles to keep your AWS account secure and manageable:
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+1. **Do not use the Root User for daily tasks:** The Root User has absolute control over account resources and billing. Secure it with a strong password, enable MFA, and reserve it strictly for necessary administrative tasks.
+2. **Enable Multi-Factor Authentication (MFA):** Add a second layer of defense beyond passwords for the Root User, administrative accounts, and active IAM users (prioritizing passkeys or security keys).
+3. **Apply the Principle of Least Privilege:** Grant users and applications only the absolute minimum permissions required to perform their tasks, avoiding broad `"*"` permissions.
+4. **Prioritize Temporary Credentials:** Instead of long-term Access Keys, utilize IAM Identity Center or integrate an identity provider to issue short-lived temporary credentials.
+5. **Use IAM Roles for Applications:** Never hardcode Access Keys into source code or `.env` files. Leverage Instance Profiles for EC2, Task Roles for ECS, or Execution Roles for Lambda.
+6. **Manage Access Keys with Extreme Care:** If external systems strictly require Access Keys, ensure they are never committed to GitHub, shared across applications, and are regularly audited or rotated.
+7. **Audit Permissions and Monitor Activity:** Combine **IAM Access Analyzer** to analyze access boundaries and **AWS CloudTrail** to record complete API activity and operational logs.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
-
-...Image...
-
-...Link...
-
-...Guide...
+**References:**
+* Security best practices in IAM
+* Root user best practices for your AWS account
+* AWS Multi-factor authentication in IAM
+* Manage access keys for IAM users
+* What is AWS CloudTrail?

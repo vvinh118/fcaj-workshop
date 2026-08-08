@@ -15,9 +15,9 @@ pre: " <b> 1.1. </b> "
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
 | --- | --- | --- | --- | --- |
 | 2 | - Tìm hiểu về chương trình AWS - First Cloud AI Journey <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập | 22/06/2026 | 22/06/2026 | |
-| 3 | - Tìm hiểu khái niệm về điện toán đám mây (Cloud Computing) <br> - Tìm hiểu kiến trúc hạ tầng toàn cầu (Global Infrastructure) và cách sử dụng AWS Management Console | 23/06/2026 | 23/06/2026 | |
-| 4 | - Tự học các bài lý thuyết và thực hành: <br>&emsp; + Tạo tài khoản Free-tier AWS <br>&emsp; + Quản lý chi phí với AWS Budget | 24/06/2026 | 24/06/2026 | |
-| 5 | - Tự học các bài lý thuyết và thực hành: <br>&emsp; + Hỗ trợ kỹ thuật với AWS Support <br>&emsp; + Quản lý truy cập với AWS Identity and Access Management (IAM) | 25/06/2026 | 25/06/2026 | |
+| 3 | - Tìm hiểu khái niệm về điện toán đám mây (Cloud Computing) <br> - Tìm hiểu kiến trúc hạ tầng toàn cầu (Global Infrastructure) và cách sử dụng AWS Management Console | 23/06/2026 | 23/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 4 | - Tự học các bài lý thuyết và thực hành: <br>&emsp; + Tạo tài khoản Free-tier AWS <br>&emsp; + Quản lý chi phí với AWS Budget | 24/06/2026 | 24/06/2026 | https://cloudjourney.awsstudygroup.com/ |
+| 5 | - Tự học các bài lý thuyết và thực hành: <br>&emsp; + Hỗ trợ kỹ thuật với AWS Support <br>&emsp; + Quản lý truy cập với AWS Identity and Access Management (IAM) | 25/06/2026 | 25/06/2026 | https://cloudjourney.awsstudygroup.com/ |
 | 7 | - Tham gia Cloud Architect Event | 27/06/2026 | 27/06/2026 | |
 
 ### Kết quả đạt được tuần 1:
